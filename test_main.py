@@ -3,7 +3,7 @@ Test goes here
 
 """
 from main import desripStats
-import pandas as pd
+import polars as pl
 
 
 def findMin(data):
@@ -41,27 +41,27 @@ def test_pd_descriptive():
     print(data_summary)
     print("==" * 30)
 
-    data = pd.read_csv(file)["mpg"]
+    data = pl.read_csv(file)["mpg"]
 
     # run some test cases: mean, min and max of the 'mpg'
     # minimum
     try:
         min_mpg = findMin(data)
-        assert data_summary["mpg"]["min"] == min_mpg
+        assert data_summary["mpg"][4] == min_mpg
     except AssertionError as msg:
         raise msg + "minimum result unmatch"
 
     # maximum
     try:
         max_mpg = findMax(data)
-        assert data_summary["mpg"]["max"] == max_mpg
+        assert data_summary["mpg"][-1] == max_mpg
     except AssertionError as msg:
         raise msg + "maximum result unmatch"
 
     # mean
     try:
         mean_mpg = calcMean(data)
-        assert round(data_summary["mpg"]["mean"], 3) == mean_mpg
+        assert round(data_summary["mpg"][2], 3) == mean_mpg
     except AssertionError as msg:
         raise msg + "mean result unmatch"
 

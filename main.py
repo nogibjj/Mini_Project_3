@@ -2,7 +2,7 @@
 Main cli or app entry point
 """
 
-import pandas as pd
+import polars as pl
 import matplotlib.pyplot as plt
 
 # define a function to provide descriptive statistics of a dataset
@@ -10,16 +10,17 @@ import matplotlib.pyplot as plt
 
 def desripStats(file):
     # use panda to read csv file
-    df = pd.read_csv(file)
+    df = pl.read_csv(file)
 
     # quick glimpse of the data
     print(df.head())
+    # print(df.describe())
 
     # check data information
-    print(df.info())
+    # print(df.info())
 
     # check unique values for each colunm
-    print(df.nunique())
+    # print(df.nunique())
 
     # plot a scatter graph
     plt.scatter(df["wt"], df["mpg"])
