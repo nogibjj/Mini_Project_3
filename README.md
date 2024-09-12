@@ -1,4 +1,4 @@
-[![CI](https://github.com/nogibjj/mini_project_2/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/mini_project_2/actions/workflows/cicd.yml)
+[![CI](https://github.com/nogibjj/mini_project_3/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/mini_project_3/actions/workflows/cicd.yml)
 
 ## mini project 3: Polars Descriptive Statistics 
 
